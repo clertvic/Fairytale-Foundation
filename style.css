@@ -1,0 +1,114 @@
+/* ------ DEFAULTS ------ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{
+    display: block;
+}
+
+.wrapper{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+form{
+	max-width: 470px;
+	margin: 0 auto;
+}
+
+form label{
+	display: block;
+	margin: 0 0 0.5rem;
+	font-size: 1rem;
+}
+
+form input[type=text], input[type=submit], textarea{
+	width: 100%;
+	margin: 0 0 1rem;
+	padding: 8px 10px;
+	border: 1px solid #d2d2d2;
+	font-size: 1rem;
+	font-weight: 300;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;	
+}
+
+body, input, textarea{
+	font-family: 'Open Sans';
+}
+
+.page-header{
+	text-align: center;	
+}
+
+.page-nav{
+	position: relative;
+	width: 100%;
+}
+
+.page-nav-logo{
+	display: inline-block;
+}
+
+.page-nav-menu-links{
+	display: inline-block;
+	margin: 0 auto;
+	max-width: 632px;
+}
+
+.page-nav-menu-link{
+	float: left;
+	width: 120px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.page-nav-menu-icon{
+	background-image: url(icon-blog-80.png);
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: relative;
+	left: 41px;
+	margin-top: 20px;
+	background-size: 100%;
+}
+
+.page-nav-menu-caption{
+	display: block;
+	margin: 5px 0 0 0;
+}
+
+.page{
+	margin: 50px 0;
+}
+
+.page p{
+	line-height: 1.8rem;
+	font-size: 1rem;
+	font-weight: 300;
+	margin-bottom: 30px;	
+}
