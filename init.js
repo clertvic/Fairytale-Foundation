@@ -1,6 +1,6 @@
 function checkHeader(){
 	var $header = $('header');
-	
+	var
 	
 }
 
