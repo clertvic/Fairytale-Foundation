@@ -49,8 +49,12 @@
     
     <?php
         // Define variables and set to empty values
-        $name = $email = $subject = $message = "";
-        $nameErr = $emailErr = $subjectErr = $messageErr = "";
+        $visitor_name = $visitor_email = $subject = $message = "";
+        $visitor_nameErr = $visitor_emailErr = $subjectErr = $messageErr = "";
+        
+        $from_email = "admin@thefairytalefoundation.org";
+/*         $to_email = "contact@thefairytalefoundation.org"; */
+		$to_email = "fairytalefoundation@gmail.com";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
@@ -60,24 +64,24 @@
             }
             else
             {
-                $name = test_input($_POST["name"]);
+                $visitor_name = test_input($_POST["name"]);
 
                 if(!preg_match("/^[a-zA-Z ]*$/", $name))
                 {
-                    $nameErr = "Only letters and white space allowed.";
+                    $visitor_nameErr = "Only letters and white space allowed.";
                 }
             }
             if(empty($_POST["email"]))
             {
-                $emailErr = "Email is required.";
+                $visitor_emailErr = "Email is required.";
             }
             else
             {
-                $email = test_input($_POST["email"]);
+                $visitor_email = test_input($_POST["email"]);
 
-                if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
+                if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $visitor_email))
                 {
-                    $emailErr = "Invalid email format";
+                    $visitor_emailErr = "Invalid email format";
                 }
             }
             if(empty($_POST["subject"]))
@@ -97,6 +101,20 @@
                 $message = test_input($_POST["message"]);
                 $message = wordwrap($message, 70);
             }
+            
+            if(empty($visitor_nameErr) && empty($visitor_emailErr) && empty($subjectErr) && empty($messageErr))
+            {
+            	$header = "From: " . $from_email . "\r\n";
+				$header .= "Reply-To: " . $visitor_email . "\r\n";
+				$emailMessage = "Name: " . $visitor_name . "\r\n";
+				$emailMessage .= "Email: " . $visitor_email . "\r\n";
+				$emailMessage .= "Message: " . $message . "\r\n";
+				
+/* 	            $success = mail($to_email, $subject, $emailMessage, $header); */
+	            $success = mail("chaiyawut.l@gmail.com", $subject, $emailMessage, "From: $from_email", "-f$your_email");
+	            echo ((bool) $success) . $to_email . $subject . $emailMessage . $header;
+				echo "Thank you for sending us feedback";
+            }
         }
 
         function test_input($data){
@@ -107,6 +125,7 @@
             return $data;
         }
         ?>
+        
         
         <!-- BEGIN SINGLE WORK -->
 
@@ -122,9 +141,9 @@
 			    </p>
 			        <form id="contact-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 						<label for="name">Name *</label>
-						<input type="text" name="name" id="name" value="<?php echo $name ?>"><?php echo $nameErr; ?>
+						<input type="text" name="name" id="name" value="<?php echo $visitor_name ?>"><?php echo $visitor_nameErr; ?>
 						<label for="email">Email *</label>
-						<input type="text" name="email" id="email" value="<?php echo $email ?>"><?php echo $emailErr; ?>
+						<input type="text" name="email" id="email" value="<?php echo $visitor_email ?>"><?php echo $visitor_emailErr; ?>
 						<label for="subject">Subject *</label>
 						<input type="text" name="subject" id="subject" value="<?php echo $subject ?>"><?php echo $subjectErr; ?>
 						<label for="message">Message *</label> 

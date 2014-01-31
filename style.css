@@ -182,7 +182,6 @@ body, input, textarea{
 	text-decoration: none;
 	color: #000;
 	font-weight: 600;
-	letter-spacing: 1px;
 	font-size: 14px;
 }
 
@@ -193,4 +192,5 @@ body, input, textarea{
 
 .page-nav .page-nav-menu-caption{
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
