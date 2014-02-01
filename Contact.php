@@ -49,71 +49,51 @@
     
     <?php
         // Define variables and set to empty values
-        $visitor_name = $visitor_email = $subject = $message = "";
-        $visitor_nameErr = $visitor_emailErr = $subjectErr = $messageErr = "";
+		empty_variables();
         
-        $from_email = "admin@thefairytalefoundation.org";
-/*         $to_email = "contact@thefairytalefoundation.org"; */
-		$to_email = "fairytalefoundation@gmail.com";
+        $fromEmail = "admin@thefairytalefoundation.org";
+        $toEmail = "contact@thefairytalefoundation.org";
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST")
-        {
-            if(empty($_POST["name"]))
-            {
-                $nameErr = "Name is required.";
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            
+            if(empty($_POST["name"])){
+                $visitorNameErr = "Name is required.";
             }
-            else
-            {
-                $visitor_name = test_input($_POST["name"]);
+            else {
+                $visitorName = test_input($_POST["name"]);
 
-                if(!preg_match("/^[a-zA-Z ]*$/", $name))
-                {
-                    $visitor_nameErr = "Only letters and white space allowed.";
+                if(!preg_match("/^[a-zA-Z ]*$/", $name)){
+                    $visitorNameErr = "Only letters and white space allowed.";
                 }
             }
-            if(empty($_POST["email"]))
-            {
-                $visitor_emailErr = "Email is required.";
+            
+            if(empty($_POST["email"])){
+                $visitorEmailErr = "Email is required.";
             }
-            else
-            {
-                $visitor_email = test_input($_POST["email"]);
+            else{
+                $visitorEmail = test_input($_POST["email"]);
 
-                if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $visitor_email))
-                {
-                    $visitor_emailErr = "Invalid email format";
+                if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $visitorEmail)){
+                    $visitorEmailErr = "Invalid email format";
                 }
             }
-            if(empty($_POST["subject"]))
-            {
-                $subjectErr = "Subject is required.";
-            }
-            else
-            {
-                $subject = test_input($_POST["subject"]);
-            }
-            if(empty($_POST["message"]))
-            {
+            if(empty($_POST["message"])){
                 $messageErr = "Message is required.";
             }
-            else
-            {
+            else{
                 $message = test_input($_POST["message"]);
                 $message = wordwrap($message, 70);
             }
             
-            if(empty($visitor_nameErr) && empty($visitor_emailErr) && empty($subjectErr) && empty($messageErr))
-            {
-            	$header = "From: " . $from_email . "\r\n";
-				$header .= "Reply-To: " . $visitor_email . "\r\n";
-				$emailMessage = "Name: " . $visitor_name . "\r\n";
-				$emailMessage .= "Email: " . $visitor_email . "\r\n";
-				$emailMessage .= "Message: " . $message . "\r\n";
+            if(empty($visitorNameErr) && empty($visitorEmailErr) && empty($messageErr)){
+            	
+            	$header = "From: " . $visitorName . "<" . $fromEmail . ">" . PHP_EOL;
+				$header .= "Reply-To: " . $visitorEmail . PHP_EOL;
+				$emailMessage = "Name: " . $visitorName . PHP_EOL;
+				$emailMessage .= "Email: " . $visitorEmail . PHP_EOL;
+				$emailMessage .= "Message: " . PHP_EOL . PHP_EOL . $message;
 				
-/* 	            $success = mail($to_email, $subject, $emailMessage, $header); */
-	            $success = mail("chaiyawut.l@gmail.com", $subject, $emailMessage, "From: $from_email", "-f$your_email");
-	            echo ((bool) $success) . $to_email . $subject . $emailMessage . $header;
-				echo "Thank you for sending us feedback";
+	            $success = mail($toEmail, "[Contact Form] " . $visitorName, $emailMessage, $header, "-f$fromEmail");
             }
         }
 
@@ -123,6 +103,11 @@
             $data = htmlspecialchars($data);
 
             return $data;
+        }
+        
+        function empty_variables(){
+	        $visitorName = $visitorEmail = $message = $thankyou = "";
+			$visitorNameErr = $visitorEmailErr = $messageErr = "";
         }
         ?>
         
@@ -137,15 +122,20 @@
 -->
 			<section class="page">
 			    <div class="wrapper">
-			    <p>These patients deserve to smile, laugh, feel healthy and themselves, and most of all to just be a kid. Every dollar is going towards making these children smile.  I can't tell you how special these visits are, and I thank you from the bottom of my heart for helping to make it possible. It means the world to me to be able to make this a reality. All money raised is being managed by Erika Strasburg and not through the hospital or it's affiliates.
-			    </p>
+			    <p class="center">Questions? Comments? Request a princess visit? Fill out the form below or <a href="mailto:<?php echo $toEmail ?>">write me an email.</a></p>
+			    <?php
+			    if($success){ 
+				    echo "<p class='center'>Thank you for your message.</p>";
+				    
+				    $visitorName = $visitorEmail = $message = "";
+					$visitorNameErr = $visitorEmailErr = $messageErr = "";
+			    }
+			    ?>
 			        <form id="contact-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 						<label for="name">Name *</label>
-						<input type="text" name="name" id="name" value="<?php echo $visitor_name ?>"><?php echo $visitor_nameErr; ?>
+						<input type="text" name="name" id="name" value="<?php echo $visitorName ?>"><?php echo $visitorNameErr; ?>
 						<label for="email">Email *</label>
-						<input type="text" name="email" id="email" value="<?php echo $visitor_email ?>"><?php echo $visitor_emailErr; ?>
-						<label for="subject">Subject *</label>
-						<input type="text" name="subject" id="subject" value="<?php echo $subject ?>"><?php echo $subjectErr; ?>
+						<input type="text" name="email" id="email" value="<?php echo $visitorEmail ?>"><?php echo $visitorEmailErr; ?>
 						<label for="message">Message *</label> 
 			            <textarea name="message" id="message" rows="10"><?php echo $message ?></textarea><?php echo $messageErr; ?>
 			            <input type="submit" name="submit" value="Submit">

@@ -194,3 +194,7 @@ body, input, textarea{
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
+
+.center{
+	text-align: center;
+}
