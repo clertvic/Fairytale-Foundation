@@ -1,8 +1,15 @@
 <html>
 <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Cache-Control" content="no-cache" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" text="text/css" href="style.css" type="text/css">
 
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" text="text/css" href="css/style.css" type="text/css">
+
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/init.js?=ver1.1"></script>
     <title></title>
 </head>
 
@@ -51,13 +58,12 @@
         <!-- BEGIN SINGLE WORK -->
 
         <div class="container">
-<!--
             <section class="cover work">
-                <div class="slide" style="background-image: url(contents/parkey_cover.png); opacity: 1; -webkit-transition: opacity 1000ms ease-in-out; transition: opacity 1000ms ease-in-out;"></div>
+                <div class="slide donate"></div>
             </section>
--->
 			<section class="page">
 			    <div class="wrapper">
+			    <h1>Donate</h1>
 			    <p>These patients deserve to smile, laugh, feel healthy and themselves, and most of all to just be a kid. Every dollar is going towards making these children smile.  I can't tell you how special these visits are, and I thank you from the bottom of my heart for helping to make it possible. It means the world to me to be able to make this a reality. All money raised is being managed by Erika Strasburg and not through the hospital or it's affiliates.
 			    </p>
 			    <div class="donation">

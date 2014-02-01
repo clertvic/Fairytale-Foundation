@@ -1,0 +1,265 @@
+/* ------ DEFAULTS ------ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{
+    display: block;
+}
+
+.body{
+	-webkit-font-smoothing: antialiased;
+}
+
+.wrapper{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 30px 30px 50px 30px;
+	background-color: #fff;
+}
+
+#contact-form{
+	max-width: 470px;
+	margin: 0 auto;
+}
+
+#contact-form label{
+	display: block;
+	margin: 0 0 0.5rem;
+	font-size: 1rem;
+}
+
+#contact-form input[type=text], #contact-form input[type=submit], #contact-form textarea{
+	width: 100%;
+	margin: 0 0 1rem;
+	padding: 8px 10px;
+	border: 1px solid #d2d2d2;
+	font-size: 1rem;
+	font-weight: 300;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;	
+}
+
+body, input, textarea{
+	font-family: 'Open Sans';
+}
+
+.page-header{
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	background-color: #f8f8f8;
+/* 	border-bottom: 1px solid #ccc8c7; */
+	-webkit-box-shadow: 0 0 7px rgba(0,0,0,.3), inset 0 7px 7px -7px rgba(0,0,0,.5);
+}
+
+.index-page-header{
+	text-align: center;
+	padding-top: 270px;
+}
+
+.page-nav{
+/*
+	position: relative;
+	width: 100%;
+*/
+}
+
+.page-nav-logo{
+	display: inline-block;
+	position: absolute;
+	left: 0;
+}
+
+.page-nav-menu-links{
+	display: inline-block;
+	margin: 0 auto;
+	max-width: 632px;
+}
+
+.page-nav-menu-link{
+	float: left;
+	width: 120px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.page-nav-menu-icon{
+	background-image: url(../images/contact8.png);
+	width: 60px;
+	height: 60px;
+	display: block;
+	position: relative;
+	left: 29px;
+	margin-top: 10px;
+	background-size: 100%;
+	-webkit-transition: all 150ms ease-in-out;
+}
+
+.page-nav-menu-caption{
+	font-family: 'Open Sans';
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+/* 	color: #fff; */
+	display: block;
+	margin: 5px 0 5px 0;
+	-webkit-transition: all 150ms ease-in-out;
+}
+
+.page{
+/* 	padding: 30px 0 50px 0; */
+	position: relative;
+	background-color: #f8f8f8;
+}
+
+.page p{
+	line-height: 1.8rem;
+	font-size: 1rem;
+	font-weight: 300;
+	margin-bottom: 30px;	
+}
+
+.donation{
+	margin-bottom: 30px;
+}
+
+.donation label{
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	text-align: right;
+	margin-right: 100px;
+}
+
+.donation .usd-sign{
+	display: inline-block;
+	position: relative;
+}
+
+.donation input{
+	margin: 0 10px;
+	display: inline-block;
+	padding: 8px 10px;
+	border: 1px solid #d2d2d2;
+	font-size: 1rem;
+	font-weight: 300;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;
+	width: 100px;
+}
+
+.donation .usd{
+	margin-right: 50px;
+}
+
+.page figure{
+	margin-bottom: 30px;
+}
+
+.page-nav-menu-link a:hover .page-nav-menu-icon, 
+.page-nav-menu-link.active .page-nav-menu-icon{
+	background-image: url(../images/contact6.png);
+}
+
+.page-nav-menu-link a{
+	text-decoration: none;
+	color: #8c4865;
+/* 	color: #ad4c64; */
+/* 	color: #e8d0c6; */
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.page-nav-menu-link a:hover, 
+.page-nav-menu-link.active a{
+	color: #ce65b3;
+/* 	color: #ad4c64; */
+}
+
+/*
+.page-nav-menu-link.active page-nav-menu-caption{
+	color: #ccc;
+}
+*/
+
+.center{
+	text-align: center;
+}
+
+.slide{
+    position: fixed;
+    width: 100%;
+    top: 97;
+    left: 0;
+    background: #000;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.slide.mission{
+    background-image: url(../images/02.jpg);	
+}
+
+.slide.journey{
+    background-image: url(../images/03.jpg);	
+}
+
+.slide.donate{
+    background-image: url(../images/A6.jpg);	
+}
+
+.slide.contact{
+    background-image: url(../images/A6.jpg);	
+}
+
+.cover{
+/*     position: relative; */
+    min-height: 0px;
+}
+
+.cover.work{
+/*     position: relative; */
+    min-height: 196px;
+    /*height: 525px;*/
+}
+
+h1{
+	font-family: 'Alegreya';
+	text-align: center;
+/* 	text-transform: uppercase; */
+	letter-spacing: 2px;
+	font-size: 37px;
+	margin-bottom: 20px;
+}
