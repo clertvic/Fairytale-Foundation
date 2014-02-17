@@ -75,6 +75,12 @@
 					    <input type="submit" name="submit" value="Donate">
 				    </form>
 			    </div>
+			    			    <figure>
+                    <div class="img_wrapper">
+                        <img src="images/donate_dress.jpg" alt=""/>
+                    </div>
+                    <figcaption class="center">Image Caption Here</figcaption>
+                </figure>
 <p>These patients deserve to smile, laugh, feel healthy and themselves, and most of all to just be a kid. Every dollar is going towards making these children smile.  I can't tell you how special these visits are, and I thank you from the bottom of my heart for helping to make it possible. It means the world to me to be able to make this a reality. All money raised is being managed by Erika Strasburg and not through the hospital or it's affiliates.
 			    </p>
 			    </div>

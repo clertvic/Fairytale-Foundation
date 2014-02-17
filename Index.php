@@ -15,7 +15,7 @@
 
 <body>
 
-
+	<div class="index background"></div>
     <!-- BEGIN HEADER -->
 
     <header class="index-page-header">

@@ -32,7 +32,7 @@
                 </a>
                 </div>
                 <div class="page-nav-menu-link" data-link="journey">
-                <a href="donate.php">
+                <a href="journey.php">
                     <span class="page-nav-menu-icon"></span>                
                     <span class="page-nav-menu-caption">Journey</span>
                 </a>
