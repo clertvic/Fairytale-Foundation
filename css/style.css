@@ -25,6 +25,16 @@ footer, header, hgroup, menu, nav, section{
     display: block;
 }
 
+/* ------ GLOBAL CSS3 TRANSITIONS ----- */
+
+.anim300{
+	-webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;	
+    transition: all 300ms ease-in-out;
+}
+
 .body{
 	-webkit-font-smoothing: antialiased;
 }
@@ -36,6 +46,7 @@ footer, header, hgroup, menu, nav, section{
 	background-color: #fff;
 }
 
+/* ------ CONTACT FORM ----- */
 #contact-form{
 	max-width: 470px;
 	margin: 0 auto;
@@ -104,7 +115,7 @@ body, input, textarea{
 .page-nav-menu-link{
 	float: left;
 	width: 120px;
-	margin: 0 10px;
+	margin: 10px;
 	cursor: pointer;
 }
 
@@ -114,44 +125,86 @@ body, input, textarea{
 	display: block;
 	position: relative;
 	left: 29px;
-	margin-top: 10px;
+/* 	margin-top: 10px; */
 	background-size: 100%;
 	-webkit-transition: all 300ms ease-in-out;
 	transition: all 300ms ease-in-out;
 }
 
-.page-nav-menu-link[data-link="mission"] .page-nav-menu-icon{
+/* ------ MENU ICONS ----- */
+.page-nav-menu-link .base{
+	width: 60px;
+	height: 60px;
+	background-size: 100%;
+	display: inline-block;
+}
+
+.page-nav-menu-link .overlay{
+	position: absolute;
+	opacity: 0;
+	width: 60px;
+	height: 60px;
+	z-index: 9;
+	background-size: 100%;
+}
+
+.page-nav-menu-link:hover .overlay{
+    opacity: 1;
+}
+
+.page-nav-menu-link[data-link="mission"] .base{
 	background-image: url(../images/mission_icon_pink.png);
 }
 
-.page-nav-menu-link[data-link="journey"] .page-nav-menu-icon{
+.page-nav-menu-link[data-link="journey"] .base{
 	background-image: url(../images/journey_icon_pink.png);
 }
 
-.page-nav-menu-link[data-link="donate"] .page-nav-menu-icon{
+.page-nav-menu-link[data-link="donate"] .base{
 	background-image: url(../images/donate_icon_pink.png);
 }
 
-.page-nav-menu-link[data-link="contact"] .page-nav-menu-icon{
+.page-nav-menu-link[data-link="contact"] .base{
 	background-image: url(../images/contact_icon_pink.png);
 }
 
-.index-page-header .page-nav-menu-link[data-link="mission"] .page-nav-menu-icon{
-	background-image: url(../images/mission_icon_pink.png);
+.page-nav-menu-link[data-link="mission"] .overlay.index{
+	background-image: url(../images/mission_icon_white.png);
 }
 
-.index-page-header .page-nav-menu-link[data-link="journey"] .page-nav-menu-icon{
-	background-image: url(../images/journey_icon_pink.png);
+.page-nav-menu-link[data-link="journey"] .overlay.index{
+	background-image: url(../images/journey_icon_white.png);
 }
 
-.index-page-header .page-nav-menu-link[data-link="donate"] .page-nav-menu-icon{
-	background-image: url(../images/donate_icon_pink.png);
+.page-nav-menu-link[data-link="donate"] .overlay.index{
+	background-image: url(../images/donate_icon_white.png);
 }
 
-.index-page-header .page-nav-menu-link[data-link="contact"] .page-nav-menu-icon{
-	background-image: url(../images/contact_icon_pink.png);
+.page-nav-menu-link[data-link="contact"] .overlay.index{
+	background-image: url(../images/contact_icon_white.png);
 }
 
+.page-nav-menu-link[data-link="mission"] .overlay,
+.page-nav-menu-link[data-link="mission"].active .base{
+	background-image: url(../images/mission_icon_red.png);
+}
+
+.page-nav-menu-link[data-link="journey"] .overlay,
+.page-nav-menu-link[data-link="journey"].active .base{
+	background-image: url(../images/journey_icon_red.png);
+}
+
+.page-nav-menu-link[data-link="donate"] .overlay,
+.page-nav-menu-link[data-link="donate"].active .base{
+	background-image: url(../images/donate_icon_red.png);
+}
+
+.page-nav-menu-link[data-link="contact"] .overlay,
+.page-nav-menu-link[data-link="contact"].active .base{
+	background-image: url(../images/contact_icon_red.png);
+}
+
+/* ------ MENU CAPTIONS ----- */
 .page-nav-menu-caption{
 	font-family: 'Open Sans';
 	text-transform: uppercase;
@@ -215,42 +268,6 @@ body, input, textarea{
 
 .page figure{
 	margin-bottom: 30px;
-}
-
-.page-nav-menu-link[data-link="mission"] a:hover .page-nav-menu-icon,
-.page-nav-menu-link[data-link="mission"].active .page-nav-menu-icon{
-	background-image: url(../images/mission_icon_red.png);
-}
-
-.page-nav-menu-link[data-link="journey"] a:hover .page-nav-menu-icon,
-.page-nav-menu-link[data-link="journey"].active .page-nav-menu-icon{
-	background-image: url(../images/journey_icon_red.png);
-}
-
-.page-nav-menu-link[data-link="donate"] a:hover .page-nav-menu-icon,
-.page-nav-menu-link[data-link="donate"].active .page-nav-menu-icon{
-	background-image: url(../images/donate_icon_red.png);
-}
-
-.page-nav-menu-link[data-link="contact"] a:hover .page-nav-menu-icon,
-.page-nav-menu-link[data-link="contact"].active .page-nav-menu-icon{
-	background-image: url(../images/contact_icon_red.png);
-}
-
-.index-page-header .page-nav-menu-link[data-link="mission"] a:hover .page-nav-menu-icon{
-	background-image: url(../images/mission_icon_white.png);
-}
-
-.index-page-header .page-nav-menu-link[data-link="journey"] a:hover .page-nav-menu-icon{
-	background-image: url(../images/journey_icon_white.png);
-}
-
-.index-page-header .page-nav-menu-link[data-link="donate"] a:hover .page-nav-menu-icon{
-	background-image: url(../images/donate_icon_white.png);
-}
-
-.index-page-header .page-nav-menu-link[data-link="contact"] a:hover .page-nav-menu-icon{
-	background-image: url(../images/contact_icon_white.png);
 }
 
 .page-nav-menu-link a{
@@ -402,3 +419,4 @@ h1{
     background-size: cover;
 	z-index: -1;
 }
+
